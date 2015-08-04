@@ -12,4 +12,11 @@
             $clientes[$key]->{$set}($valor);
         }
     }
+    if(isset($_GET['order'])){
+        if($_GET['order']=='desc'){
+            krsort($clientes);
+        }elseif($_GET['order']=='asc'){
+            ksort($clientes);
+        }
+    }
     require_once 'pages/page.php';
